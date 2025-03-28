@@ -6,12 +6,15 @@
 import UIKit
 import Nuke
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
+    
+    
 
-
+    @IBOutlet weak var tableView: UITableView!
+    private var posts: [Post] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        tableView.dataSource = self
         
         fetchPosts()
     }
@@ -48,6 +51,8 @@ class ViewController: UIViewController {
                     for post in posts {
                         print("🍏 Summary: \(post.summary)")
                     }
+                    self?.posts = posts //whenever we successfully get posts back from the API, we need to update the value of self.posts
+                    self?.tableView.reloadData()
                 }
 
             } catch {
@@ -55,5 +60,16 @@ class ViewController: UIViewController {
             }
         }
         session.resume()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        let post = posts[indexPath.row]
+        cell.textLabel?.text = post.summary
+        return cell
     }
 }
