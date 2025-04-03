@@ -14,8 +14,7 @@ The following **required** functionality is completed:
 - [X] App populates the table view with data fetched from an API
 
 ## Video Walkthrough
-
-.![Kapture 2025-04-02 at 21 52 36](https://github.com/user-attachments/assets/200e8ed7-b403-41c6-b7c5-4c43b5757bec)
+![Kapture 2025-04-02 at 22 08 50](https://github.com/user-attachments/assets/88b341eb-2926-4960-86a0-78600f88ec4b)
 
 ## Notes
 
