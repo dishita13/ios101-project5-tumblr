@@ -67,9 +67,18 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell        
         let post = posts[indexPath.row]
-        cell.textLabel?.text = post.summary
+        
+        if let firstPhoto = post.photos.first {
+            Nuke.loadImage(with: firstPhoto.originalSize.url, into: cell.PostImage)
+        } else {
+            cell.PostImage.image = nil // Clear image if no photo available
+        }
+        
+        cell.SummaryLabel.text = post.summary
+        cell.Label1.text = post.caption
+
         return cell
     }
 }
