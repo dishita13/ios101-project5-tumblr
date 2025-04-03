@@ -1,4 +1,4 @@
-# Project 5 - **Tumblr Table API **
+# Project 5 - Tumblr Table API
 
 Submitted by: **Dishita Jhawar**
 
