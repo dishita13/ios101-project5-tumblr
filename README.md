@@ -1,4 +1,4 @@
-![Kapture 2025-04-02 at 21 52 36](https://github.com/user-attachments/assets/0a9c3310-30a9-427b-bf0c-5044d67eef93)# Project 5 - *Tumblr Table *
+# Project 5 - *Tumblr Table *
 
 Submitted by: **Dishita Jhawar**
 
